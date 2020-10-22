@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class java_task_2_5 {
 
-    static final int size = 10;
+    static final int size = 10000000;
     static final int h = size / 2;
 
     public static void method1(float[] arr, String method, int startCounter){
@@ -47,14 +47,14 @@ public class java_task_2_5 {
         System.arraycopy(a1, 0, arr, 0, h);
         System.arraycopy(a2, 0, arr, h, h);
         System.out.println("Метод 2, время склеивания массива: " + (System.currentTimeMillis() - a));
-        System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(arr));
 
     }
 
     public static void main(String[] args) {
         float[] arr = new float[size];
         method1(arr, "Метод 1", 0);
-        System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(arr));
         method2();
     }
 }
