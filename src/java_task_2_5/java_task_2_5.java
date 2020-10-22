@@ -21,7 +21,7 @@ public class java_task_2_5 {
         System.out.println(method + ", расчет:" + (System.currentTimeMillis() - a));
     }
 
-    public static void method2()
+    public static float[] method2()
     {
         float[] arr = new float[size];
         long a = System.currentTimeMillis();
@@ -48,6 +48,7 @@ public class java_task_2_5 {
         System.arraycopy(a2, 0, arr, h, h);
         System.out.println("Метод 2, время склеивания массива: " + (System.currentTimeMillis() - a));
         //System.out.println(Arrays.toString(arr));
+        return arr;
 
     }
 
@@ -55,6 +56,13 @@ public class java_task_2_5 {
         float[] arr = new float[size];
         method1(arr, "Метод 1", 0);
         //System.out.println(Arrays.toString(arr));
-        method2();
+        float[] arr1 = method2();
+        for (int k = 0; k < arr.length; k++) {
+            if(arr[k] != arr1[k]) {
+                System.out.println(false);
+                return;
+            }
+        }
+        System.out.println(true);
     }
 }
